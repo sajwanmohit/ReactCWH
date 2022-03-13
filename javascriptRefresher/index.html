@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict" //enable strict mode , on react strict mode is activated. use let while defining variables
+        let a = 24; //comes after ES6,always use let
+        let name = "Mohit";
+        const pi = 3.14;
+        /* 
+        Data Types
+        1.Number 2.Objects 3.Boolean 4.String 5.Undefined 6.Null 
+        */
+        console.log("My Name is "+name);
+        console.log(name+" age is : "+a);
+        console.log("PI value : "+pi);
+
+
+        /*
+        Functions
+        */
+        function hello(){
+            console.log("Hello "+name);
+        }
+        hello();
+
+        /*
+        Objects
+        */
+        let objA = {
+            name : "Mohit Sajwan",
+            age : 24,
+            func : function demo(number){
+                console.log("doing something with "+number);
+            }
+        };
+        console.log("Hello "+objA.name+" .Your age is "+objA.age);
+        objA.func(10);
+
+        /*
+        Events in JS
+        */
+        document.addEventListener("click", function click(){
+            console.log("clicked");
+            let conf = confirm("Are you sure?");
+            console.log(conf);
+        });
+        function clicked(){
+            console.log("heading clicked");
+        }
+
+        /*
+        Array
+        */
+        let arr = [12,13,24];
+        for(let i = 0;i < arr.length;i++){
+            console.log(arr[i]);
+        }
+        arr.forEach(
+            num => {console.log(num)}
+        );
+
+        /*
+        Function and Arrow Function
+        */
+        let number = () => {
+            console.log("Number is "+this);
+        }
+        number();
+
+        function func(){
+            console.log("Number is "+this);
+        }
+        func();
+
+        /*
+        setTimeout
+        */
+        setTimeout(() => {
+            console.log("Hi");
+        }, 3000);
+        console.log("I was written after Hi");
+
+        /*
+        Promises : either it will resolve or reject or pending
+        */
+        let f = new Promise(function(resolve,reject){
+           setInterval(() => {
+               let error = true;
+               if(error){
+                resolve();
+               }
+               else{
+                reject();
+               }
+        }, 2000);
+        });
+
+        f.then(() => {console.log("Resolved Promise")}).catch(()=>{console.log("Rejected Promise")});
+
+        function fu(){
+            return new Promise((resolve,reject)=>{
+                const b = false;
+                if(b){
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            });
+        }
+        fu().then(()=>{console.log("fu resolved")}).catch(()=>{console.log("fu rejected")});
+
+        async function fun(){
+            return "resolved";
+        }
+        fun().then((resolved)=>{console.log("Hi Mohit ,This is "+resolved)}).catch((reject)=>{console.log(reject)});
+
+    </script>
+</head>
+<body>
+    <h1 onclick="clicked()">
+    I am learning JS.
+    </h1>
+</body>
+</html>
