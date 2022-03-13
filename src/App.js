@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 
+let name = "Mohit Sajwan";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //JSX (Javascript XML)
+    <>
+    <nav>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </nav>
+    <h1>Hello {name}</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur reiciendis atque aliquam, id dolorum iusto beatae vel officia.
+       Asperiores voluptas illum illo culpa non qui facere consequatur in amet quibusdam.
+    </p>
+    </>
+    //JSX END
   );
 }
 
