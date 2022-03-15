@@ -1,0 +1,11 @@
+.myBtn {
+  margin: 5px;
+  border-radius: 50px;
+  width: 300px;
+  background-color: white;
+  color: black;
+}
+.myBtn:hover {
+  background-color: forestgreen;
+  color: black;
+}

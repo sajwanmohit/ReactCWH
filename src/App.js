@@ -6,9 +6,11 @@ function App() {
   return (
     //JSX (Javascript XML)
     <>
-      <Navbar title="TextUtils" aboutText="About" />
-      <div className="container">
-        <TextForm heading="Enter a text to analyze below" />
+      <div className="main">
+        <Navbar title="TextUtils" aboutText="About" />
+        <div className="container">
+          <TextForm heading="Enter a text to analyze below" />
+        </div>
       </div>
     </>
     //JSX END
