@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About";
 import Navbar from "./components/Navbar.js";
 import TextForm from "./components/TextForm.js";
 
@@ -8,9 +9,8 @@ function App() {
     <>
       <div className="main">
         <Navbar title="TextUtils" aboutText="About" />
-        <div className="container">
           <TextForm heading="Enter a text to analyze below" />
-        </div>
+        {/* <About /> */}
       </div>
     </>
     //JSX END
