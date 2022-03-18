@@ -24,11 +24,11 @@ export default function TextForm(props) {
     let dummyText = text;
     dummyText = dummyText.trim();
     let arr = dummyText.split(" ");
-    if (arr.length == 1 && arr[0].length == 0) {
+    if (arr.length === 1 && arr[0].length === 0) {
       setWords(0);
       setCharacters(0);
       return;
-    } else if (arr.length == 1) {
+    } else if (arr.length === 1) {
       setWords(1);
       setCharacters(arr[0].length);
     } else {
@@ -77,26 +77,32 @@ export default function TextForm(props) {
               onChange={handleOnChange}
             ></textarea>
           </div>
-          <button className="btn btn-primary myBtn" onClick={handleUpClick}>
+          <button
+            className="btn btn-primary myBtn lftBtn"
+            onClick={handleUpClick}
+          >
             Convert to UpperCase
           </button>
 
-          <button className="btn btn-primary myBtn" onClick={handleLoClick}>
+          <button
+            className="btn btn-primary myBtn lftBtn"
+            onClick={handleLoClick}
+          >
             Convert to LowerCase
           </button>
 
           <button
-            className="btn btn-primary myBtn"
+            className="btn btn-primary myBtn rgtBtn"
             onClick={handleWordsAndCharactersCount}
           >
             Count Words and Characters
           </button>
 
-          <button className="btn btn-primary myBtn" onClick={preview}>
+          <button className="btn btn-primary myBtn rgtBtn" onClick={preview}>
             Preview
           </button>
 
-          <button className="btn btn-primary myBtn" onClick={reset}>
+          <button className="btn btn-primary myBtn btBtn" onClick={reset}>
             Reset
           </button>
         </div>

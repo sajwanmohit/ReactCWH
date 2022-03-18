@@ -1,11 +1,20 @@
 .myBtn {
   margin: 5px;
   border-radius: 50px;
+  border-width: 0px;
   width: 300px;
   background-color: white;
   color: black;
+  box-shadow: inset 0 0 0 0 lightblue;
+  transition: ease-out 0.4s;
+}
+.myBtn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(1px);
 }
 .myBtn:hover {
-  background-color: forestgreen;
+  background-color: lightblue;
   color: black;
+  border-width: 0px;
+  box-shadow: inset 300px 0 0 0 lightblue;
 }
