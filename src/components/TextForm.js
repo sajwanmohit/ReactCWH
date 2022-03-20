@@ -41,6 +41,12 @@ export default function TextForm(props) {
     }
   };
 
+  const trim = () => {
+    console.log("called " + text);
+    let dText = text.trim();
+    setText(dText);
+  };
+
   const preview = () => {
     setHidePreview("");
     setPreviewText(text);
@@ -66,59 +72,53 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container">
-        <div className="container">
-          <h1>{props.heading}</h1>
-          <div className="mb-3">
-            <textarea
-              id="myBox"
-              rows="8"
-              className="form-control"
-              value={text}
-              onChange={handleOnChange}
-            ></textarea>
-          </div>
-          <button
-            className="btn btn-primary myBtn lftBtn"
-            onClick={handleUpClick}
-          >
-            Convert to UpperCase
-          </button>
-
-          <button
-            className="btn btn-primary myBtn lftBtn"
-            onClick={handleLoClick}
-          >
-            Convert to LowerCase
-          </button>
-
-          <button
-            className="btn btn-primary myBtn rgtBtn"
-            onClick={handleWordsAndCharactersCount}
-          >
-            Count Words and Characters
-          </button>
-
-          <button className="btn btn-primary myBtn rgtBtn" onClick={preview}>
-            Preview
-          </button>
-
-          <button className="btn btn-primary myBtn btBtn" onClick={reset}>
-            Reset
-          </button>
+        <h1>{props.heading}</h1>
+        <div className="mb-3">
+          <textarea
+            id="myBox"
+            rows="8"
+            className="form-control"
+            value={text}
+            onChange={handleOnChange}
+          ></textarea>
         </div>
+        <button className="btn btn-primary myBtn " onClick={handleUpClick}>
+          Convert to UpperCase
+        </button>
 
-        <div className="container">
-          <h1>Your Text Summary</h1>
-          <h3>Number of words and characters : </h3>
-          <p>
-            {words} words and {characters} characters
-          </p>
-          <p>
-            {((words * 0.5) / 60).toFixed(2)} minutes to read this paragraph.
-          </p>
-          <h2>Preview</h2>
-          <p hidden={hidePreview}>{previewText}</p>
-        </div>
+        <button className="btn btn-primary myBtn " onClick={handleLoClick}>
+          Convert to LowerCase
+        </button>
+
+        <button
+          className="btn btn-primary myBtn"
+          onClick={handleWordsAndCharactersCount}
+        >
+          Count Words and Characters
+        </button>
+
+        <button className="btn btn-primary myBtn" onClick={trim}>
+          Trim
+        </button>
+
+        <button className="btn btn-primary myBtn " onClick={preview}>
+          Preview
+        </button>
+
+        <button className="btn btn-primary myBtn" onClick={reset}>
+          Reset
+        </button>
+      </div>
+
+      <div className="container">
+        <h1>Your Text Summary</h1>
+        <h3>Number of words and characters : </h3>
+        <p>
+          {words} words and {characters} characters
+        </p>
+        <p>{((words * 0.5) / 60).toFixed(2)} minutes to read this paragraph.</p>
+        <h2>Preview</h2>
+        <p hidden={hidePreview}>{previewText}</p>
       </div>
     </>
   );
