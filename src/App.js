@@ -22,9 +22,11 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       showAlert("Dark Mode has been enabled", "success");
+      document.title = "TextUtils - Home DarkMode";
     } else {
       setMode("light");
       showAlert("Light Mode has been enabled", "success");
+      document.title = "TextUtils - Home LightMode";
     }
   };
   return (
