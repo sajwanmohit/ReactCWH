@@ -1,16 +1,30 @@
 import { useState } from "react";
 import "./App.css";
+import Alert from "./components/Alert";
 import Navbar from "./components/Navbar.js";
 import TextForm from "./components/TextForm.js";
 
 function App() {
   const [mode, setMode] = useState("light");
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  };
 
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
+      showAlert("Dark Mode has been enabled", "success");
     } else {
       setMode("light");
+      showAlert("Light Mode has been enabled", "success");
     }
   };
   return (
@@ -26,7 +40,12 @@ function App() {
           mode={mode}
           toggleMode={toggleMode}
         />
-        <TextForm heading="Enter a text to analyze below" mode={mode} />
+        <Alert alert={alert} />
+        <TextForm
+          showAlert={showAlert}
+          heading="Enter a text to analyze below"
+          mode={mode}
+        />
         {/* <About /> */}
       </div>
     </>

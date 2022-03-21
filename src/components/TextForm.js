@@ -8,11 +8,14 @@ export default function TextForm(props) {
     // console.log("UpperCase was clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase", "success");
   };
 
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+
+    props.showAlert("Converted to lowercase", "success");
   };
 
   const handleOnChange = (event) => {
@@ -39,17 +42,22 @@ export default function TextForm(props) {
       }
       setCharacters(characters);
     }
+    props.showAlert("Calculated words and characters", "success");
   };
 
   const trim = () => {
     console.log("called " + text);
     let dText = text.trim();
     setText(dText);
+
+    props.showAlert("sentence trimmed", "success");
   };
 
   const preview = () => {
     setHidePreview("");
     setPreviewText(text);
+
+    props.showAlert("Preview available", "success");
   };
 
   const reset = () => {
@@ -58,6 +66,7 @@ export default function TextForm(props) {
     setCharacters(0);
     setHidePreview("hidden");
     setPreviewText("");
+    props.showAlert("TextArea is reset", "success");
   };
 
   const [text, setText] = useState("");
