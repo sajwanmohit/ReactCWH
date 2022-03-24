@@ -120,7 +120,7 @@ export default function TextForm(props) {
       </div>
 
       <div className="container">
-        <h1>Your Text Summary</h1>
+        <h2>Your Text Summary</h2>
         <h3>Number of words and characters : </h3>
         <p>
           {words} words and {characters} characters
