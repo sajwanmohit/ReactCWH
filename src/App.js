@@ -25,11 +25,11 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       showAlert("Dark Mode has been enabled", "success");
-      document.title = "TextUtils - Home DarkMode";
+      // document.title = "TextUtils - Home DarkMode";
     } else {
       setMode("light");
       showAlert("Light Mode has been enabled", "success");
-      document.title = "TextUtils - Home LightMode";
+      // document.title = "TextUtils - Home LightMode";
     }
   };
   return (
@@ -54,12 +54,12 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter a text to analyze below"
+                  heading="Try Textutils : Word Counter,Character Counter,Remove extra spaces"
                   mode={mode}
                 />
               }
             ></Route>
-            <Route exact path="/about" element={<About />}></Route>
+            <Route exact path="/about" element={<About mode={mode} />}></Route>
           </Routes>
         </Router>
       </div>

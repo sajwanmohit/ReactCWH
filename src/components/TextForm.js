@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import "./TextForm.css";
 
 export default function TextForm(props) {
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "black" : "white",
+  };
   const handleUpClick = () => {
     // console.log("UpperCase was clicked");
     let newText = text.toUpperCase();
@@ -81,7 +85,7 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container">
-        <h1>{props.heading}</h1>
+        <h1 className="mu-2 mb-2">{props.heading}</h1>
         <div className="mb-3">
           <textarea
             id="myBox"
@@ -89,32 +93,60 @@ export default function TextForm(props) {
             className="form-control"
             value={text}
             onChange={handleOnChange}
+            style={myStyle}
           ></textarea>
         </div>
-        <button className="btn btn-primary myBtn " onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary myBtn "
+          style={myStyle}
+          onClick={handleUpClick}
+        >
           Convert to UpperCase
         </button>
 
-        <button className="btn btn-primary myBtn " onClick={handleLoClick}>
+        <button
+          disabled={text.length === 0 ? true : false}
+          className="btn btn-primary myBtn "
+          style={myStyle}
+          onClick={handleLoClick}
+        >
           Convert to LowerCase
         </button>
 
         <button
+          disabled={text.length === 0 ? true : false}
           className="btn btn-primary myBtn"
+          style={myStyle}
           onClick={handleWordsAndCharactersCount}
         >
           Count Words and Characters
         </button>
 
-        <button className="btn btn-primary myBtn" onClick={trim}>
+        <button
+          disabled={text.length === 0 ? true : false}
+          className="btn btn-primary myBtn"
+          style={myStyle}
+          onClick={trim}
+        >
           Trim
         </button>
 
-        <button className="btn btn-primary myBtn " onClick={preview}>
+        <button
+          disabled={text.length === 0 ? true : false}
+          className="btn btn-primary myBtn "
+          style={myStyle}
+          onClick={preview}
+        >
           Preview
         </button>
 
-        <button className="btn btn-primary myBtn" onClick={reset}>
+        <button
+          disabled={text.length === 0 ? true : false}
+          className="btn btn-primary myBtn"
+          style={myStyle}
+          onClick={reset}
+        >
           Reset
         </button>
       </div>
