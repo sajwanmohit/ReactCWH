@@ -13,8 +13,5 @@
   transform: translateY(1px);
 }
 .myBtn:hover {
-  background-color: lightblue;
-  color: black;
-  border-width: 0px;
   box-shadow: inset 300px 0 0 0 lightblue;
 }
